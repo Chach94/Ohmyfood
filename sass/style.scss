@@ -2,6 +2,14 @@ $pink:#FF79DA;
 $purple:#9356DC;
 $bluegreen:#99E2D0;
 
+
+%flex-center{
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 *{
@@ -13,14 +21,66 @@ $bluegreen:#99E2D0;
 
 
 header{
-    display:flex; 
-    flex-direction: column;
-    align-items: center;
+  @extend %flex-center;
+  background-color:white; 
+  width: 100%;
+  box-shadow: 0px 2px 5px GRAY; 
     
 }
 
 header img{
-    border: 2px solid brown; 
-    width:60%;
+   
+    width:40%;
+    margin: 10px;
     
+    
+}
+span{
+    margin-top:5px; 
+    background-color:#f3f3f3;
+    width: 100%; 
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+    font-size: 18px;
+}
+span i{
+    padding-right: 15px; 
+    font-size: 18px; 
+}
+
+.location{
+     
+    background-color: #fafafa;
+    width:100%;
+    @extend %flex-center;
+    padding: 15px; 
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        margin: 15px; 
+    }
+    &__subtitle{
+        font-size:18px; 
+        font-weight: 300;
+        text-align:center; 
+        margin-bottom: 20px;
+
+    }
+    &__btn{
+        background:linear-gradient($pink, $purple);
+        border: none; 
+        width: 220px;
+        height: 50px;
+        color:white; 
+        font-size: 16px;
+        font-weight: 300;
+        border-radius: 30px;
+        box-shadow: 3px 3px 3px  lightgray;
+        margin-bottom: 35px;
+        margin-top: 10px; 
+    }
+
 }
