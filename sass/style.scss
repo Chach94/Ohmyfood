@@ -1,5 +1,9 @@
 @import "./utils/variables";
 
+@mixin card-shadow{
+    box-shadow: 3px 5px 5px 5px lighten( black, 90);
+}
+
 %flex-center{
     display:flex; 
     flex-direction: column;
@@ -19,7 +23,101 @@ body{
      font-family: roboto;
 }
 
+.loader{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    background-color: rgba(187, 153, 226, 0.659); 
+    backdrop-filter: blur(10px) ;
+    z-index: 10;
+   
+    animation-name: loader;
+    animation-duration: 4s; 
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
 
+}
+.container-loader>span{
+    display:inline-block;
+    font-size: 40px;
+    font-family: Shrikhand;
+}
+
+.container-loader>.letter1{
+ color: $pink; 
+ animation:spinloadtop 1500ms 3 alternate ease-out;
+
+}
+
+.container-loader>.letter2{
+    color: $pink; 
+    animation:spinloadbottom 1500ms 3 alternate ease-out;
+   }
+  
+   
+
+
+@keyframes spinloadtop{
+    0%{
+        transform: translateY(-300px) scale(0);
+    }
+    20%{
+        color:$purple;
+    }
+    40%{
+       color:$bluegreen;
+    }
+    60%{
+       color:$pink;
+    }
+    80%{
+        color:$purple;
+        
+    }
+    100%{
+        transform: translateY(0px) scale(1);
+       
+       
+        
+    }
+}
+@keyframes spinloadbottom{
+    0%{
+        transform: translateY(300px) scale(0) ;
+    }
+    20%{
+        color:$purple;
+    }
+    40%{
+       color:$bluegreen;
+    }
+    60%{
+       color:$pink;
+    }
+    80%{
+        color:$purple;
+    }
+   100%{
+        transform: translateY(0px) scale(1) ;
+        
+    }
+    
+}
+
+@keyframes loader{
+
+    from{
+        opacity : 1; 
+    }
+    to{
+        opacity: 0; 
+        visibility: hidden;
+    }
+}
 header{
 
   background-color:white; 
@@ -51,6 +149,15 @@ span i{
     padding-right: 15px; 
     font-size: 18px; 
 }
+input{
+
+    background-color: #f3f3f3;
+    border: none; 
+    font-size: 18px;
+    
+    width: 30%;
+    
+}
 
 .location{
      
@@ -80,12 +187,15 @@ span i{
         font-size: 16px;
         font-weight: 300;
         border-radius: 30px;
-        box-shadow: 3px 3px 3px  lightgray;
+        @include card-shadow();
         margin-bottom: 35px;
-        margin-top: 10px; 
-    }
+        margin-top: 10px;
+        cursor: pointer;
+   
 
-}
+}  
+ }
+
 #choice{
     margin: 30px 20px 70px 10px ; 
 }
@@ -122,7 +232,7 @@ span i{
         padding: 25px; 
         
         border-radius: 25px;
-        box-shadow: 3px 5px 5px 5px rgb(230, 228, 228);
+        @include card-shadow();
         font-size: 16px; 
         font-weight: 500;
     }
@@ -160,7 +270,7 @@ span i{
     width: 100%; 
     height: 250px;
     border-radius: 20px; 
-    box-shadow: 3px 5px 5px 5px rgb(230, 228, 228);
+    @include card-shadow();
 }
 .card img{
     width: 100%; 
@@ -170,14 +280,12 @@ span i{
     
 }
 .text-card{
-
+      
     margin: 10px 30px 10px 15px; 
     &__title{
         display: flex; 
-        justify-content: space-between;
         font-size: 18px;
         font-weight: 500;
-         
     }
     &__subtitle{
 
@@ -185,27 +293,37 @@ span i{
         font-weight: 300;
     }
 }
-.text-card>h3 i{
-    
-    font-size: 25px; 
-    
+
+span>.fa-heart{
+    position: absolute; 
+    right: 20px; bottom: 30px; 
+    font-size: 24px; 
+    &.fa-solid{
+        background: linear-gradient($pink, $purple);
+        background-clip:text;
+        color:transparent;
+        cursor: pointer;
+        opacity:0; 
+        transition: opacity 800ms ease-out;
+        &:active{
+            opacity:1;
+        }
+    }
 }
 .new{
     position: absolute; 
-    top: 15px; left: 300px; 
+    top: 15px; right: 20px; 
     
     background:$bluegreen; 
     padding:5px 10px; 
-    color:darkcyan;
+    color:darken($bluegreen,40);
     font-size: 14px; 
 }
 .footer-menu{
 
-    background: rgb(73, 72, 72); 
+    background: lighten(black, 30); 
     width:100%;
     color:white; 
-    
-   
     &__title{
         font-family: shrikhand;
         font-size: 18px; 
@@ -218,11 +336,12 @@ span i{
 ul{
     padding: 0px 20px 30px 20px; 
     list-style: none;
+    li{
+        font-weight: 400;
+        padding-bottom: 10px; 
+    }
 }
-li{
-    font-weight: 400;
-    padding-bottom: 10px; 
-}
+
 .footer-menu i{
     padding-right:10px; 
     font-size: 14px; 
@@ -230,14 +349,27 @@ li{
 
 
 /*----PAGES menu-----*/
+.accueil{
+    display: flex; 
+}
+.accueil img{
+   margin-left: 70px;
+   padding: 5px; 
+   
+}
+.accueil i{ 
+    border: 1px solid blue; 
+    margin: 20px; 
+    font-size: 20px;
+
+}
 .card_img{
     
     width:100%;
-    
-    
 }
 .card_img img{
     width:100%;
+    height: 300px;
     object-fit: cover;
 }
 .menu_list{
@@ -268,6 +400,7 @@ li{
     display:flex; 
     flex-direction: column;
     align-items: center;
+    overflow: hidden; 
 
     &__btn{
         background:linear-gradient($pink, $purple);
@@ -278,29 +411,57 @@ li{
         font-size: 18px;
         font-weight: 400;
         border-radius: 30px;
-        box-shadow: 3px 3px 3px  lightgray;
+        @include card-shadow();
         margin-bottom: 20px;
         margin-top: 10px; 
+        cursor: pointer;
+        
+        &:hover{
+            
+            background:linear-gradient(lighten($pink,5), lighten($purple, 5));
+           
+        }
 
     }
 }
 .card-menu{
-
+    position:relative; 
     background: white; 
     width: 100%;
     border-radius: 15px; 
     padding: 10px; 
-    box-shadow: 3px 5px 5px 5px rgb(230, 228, 228);
     margin-bottom: 15px; 
+    animation-duration: 2s;
+    animation-name: slidein;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    &.slide2{
+        animation-delay: 200ms; 
+     }
+    &.slide3{
+        animation-delay: 400ms;
+    }
+    &.slide4{
+        animation-delay: 600ms; 
+    }
+    &:hover > .card-menu__subtitle span {
+        transform: translate(-60px) ;
+        transition: all 1000ms ease-in-out; 
+        padding-right:10px; 
+       }
+
+    
     &__subtitle{
         display:flex; 
         justify-content: space-between;
         align-items: center;
+        text-overflow: ellipsis;
     }
     &__subtitle h5{
         font-size: 15px; 
         font-weight: 300;
         line-height: 25px;
+        
     }
     &__subtitle span{
         font-size: 15px;
@@ -308,6 +469,53 @@ li{
         padding-right: 15px;
     }
 }
+
+
+.check{
+    position:absolute; 
+    right:0px; top:0px;
+    width:0; 
+    height: 100%;
+    background: $bluegreen;
+    color:white; 
+    border-radius: 0px 15px 15px 0px; 
+    overflow: hidden;
+    display:flex; 
+    justify-content: center; 
+    align-items:center;
+    transition: width 1000ms ease-in-out; 
+    
+}
+
+.check>.fa-circle-check{
+font-size: 20px; 
+transition: transform 500ms; 
+
+}
+.card-menu:hover > .check{
+    width: 18%;
+    &>.fa-circle-check{
+        transform: rotate(360deg);
+    }
+}
+//ANIMATION
+@keyframes slidein {
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+   
+  
+    100% {
+        transform:translateY(-5px);
+        opacity: 1;
+      
+    }
+  }
+
+
+
+  
 .list-menu{
  width: 100%;
  margin-bottom: 20px; 
