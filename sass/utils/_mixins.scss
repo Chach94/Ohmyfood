@@ -1,0 +1,8 @@
+@mixin card-shadow {
+  box-shadow: 3px 5px 5px 5px lighten(black, 85);
+}
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

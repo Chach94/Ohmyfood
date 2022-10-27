@@ -1,0 +1,25 @@
+.btn {
+  background: linear-gradient($pink, $purple);
+  border: none;
+  color: white;
+  font-weight: 400;
+  border-radius: 30px;
+  width: 220px;
+  height: 50px;
+  @include card-shadow;
+  cursor: pointer;
+  &:active {
+    background: linear-gradient(lighten($pink, 5), lighten($purple, 5));
+    box-shadow: 3px 5px 5px 5px lighten(black, 50);
+  }
+  &__index {
+    margin-bottom: 35px;
+    margin-top: 10px;
+    font-size: 16px;
+
+    &--menu {
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+  }
+}

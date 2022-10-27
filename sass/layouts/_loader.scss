@@ -1,0 +1,80 @@
+.loader {
+  width: 100%;
+  height: 100%;
+  @include flexcenter;
+  position: fixed;
+  background-color: rgba(187, 153, 226, 0.659);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+
+  animation-name: loader;
+  animation-duration: 4s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+.container-loader > span {
+  display: inline-block;
+  font-size: 40px;
+  font-family: Shrikhand;
+}
+
+.container-loader > .letter1 {
+  color: $pink;
+  animation: spinloadtop 1500ms 3 alternate ease-out;
+}
+
+.container-loader > .letter2 {
+  color: $pink;
+  animation: spinloadbottom 1500ms 3 alternate ease-out;
+}
+
+@keyframes spinloadtop {
+  0% {
+    transform: translateY(-300px) scale(0);
+  }
+  20% {
+    color: $purple;
+  }
+  40% {
+    color: $bluegreen;
+  }
+  60% {
+    color: $pink;
+  }
+  80% {
+    color: $purple;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+@keyframes spinloadbottom {
+  0% {
+    transform: translateY(300px) scale(0);
+  }
+  20% {
+    color: $purple;
+  }
+  40% {
+    color: $bluegreen;
+  }
+  60% {
+    color: $pink;
+  }
+  80% {
+    color: $purple;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes loader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
