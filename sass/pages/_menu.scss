@@ -28,9 +28,22 @@ header > a {
     font-size: 24px;
     font-weight: 100;
   }
-  i {
+  .fa-heart {
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
     font-size: 24px;
-    padding-right: 20px;
+    &.fa-solid {
+      background: linear-gradient($pink, $purple);
+      background-clip: text;
+      color: transparent;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 800ms ease-out;
+      &:active {
+        opacity: 1;
+      }
+    }
   }
 }
 

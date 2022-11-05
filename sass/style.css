@@ -243,9 +243,23 @@ header > a {
   font-size: 24px;
   font-weight: 100;
 }
-.global-menu i {
+.global-menu .fa-heart {
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
   font-size: 24px;
-  padding-right: 20px;
+}
+.global-menu .fa-heart.fa-solid {
+  background: linear-gradient(#ff79da, #9356dc);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 800ms ease-out;
+}
+.global-menu .fa-heart.fa-solid:active {
+  opacity: 1;
 }
 
 .menu {
@@ -613,6 +627,9 @@ ul a {
   }
   .operation-card__subtitle:hover {
     background-color: #f2eafb;
+  }
+  .operation-card {
+    width: 30%;
   }
   .btn:hover {
     background: linear-gradient(#ff93e1, #a16be0);
