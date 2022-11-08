@@ -85,7 +85,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted; /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -184,9 +184,9 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -194,9 +194,9 @@ button,
    * Remove the inner border and padding in Firefox.
    */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -205,9 +205,9 @@ button::-moz-focus-inner,
    * Restore the focus styles unset by the previous rule.
    */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -251,8 +251,8 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -260,8 +260,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -269,7 +269,7 @@ textarea {
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -277,7 +277,7 @@ textarea {
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -476,7 +476,7 @@ input {
   width: 100%;
   height: 70%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 20px 20px 0px 0px;
 }
 
@@ -502,7 +502,7 @@ span > .fa-heart {
 span > .fa-heart.fa-solid {
   background: linear-gradient(#ff79da, #9356dc);
   -webkit-background-clip: text;
-  background-clip: text;
+          background-clip: text;
   color: transparent;
   cursor: pointer;
   opacity: 0;
@@ -537,7 +537,7 @@ header > a {
   width: 100%;
   height: 300px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .global-menu {
@@ -564,7 +564,7 @@ header > a {
 .global-menu .fa-heart.fa-solid {
   background: linear-gradient(#ff79da, #9356dc);
   -webkit-background-clip: text;
-  background-clip: text;
+          background-clip: text;
   color: transparent;
   cursor: pointer;
   opacity: 0;
@@ -592,8 +592,9 @@ header > a {
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 15px;
+  cursor: pointer;
   -webkit-animation: slidein 2s both ease-in-out;
-  animation: slidein 2s both ease-in-out;
+          animation: slidein 2s both ease-in-out;
 }
 .card-menu__subtitle {
   display: flex;
@@ -616,15 +617,15 @@ header > a {
 }
 .card-menu.slide2 {
   -webkit-animation-delay: 200ms;
-  animation-delay: 200ms;
+          animation-delay: 200ms;
 }
 .card-menu.slide3 {
   -webkit-animation-delay: 400ms;
-  animation-delay: 400ms;
+          animation-delay: 400ms;
 }
 .card-menu.slide4 {
   -webkit-animation-delay: 600ms;
-  animation-delay: 600ms;
+          animation-delay: 600ms;
 }
 .card-menu:hover > .card-menu__subtitle span {
   transform: translate(-60px);
@@ -714,16 +715,16 @@ header > a {
   position: fixed;
   background-color: rgba(187, 153, 226, 0.659);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   z-index: 10;
   -webkit-animation-name: loader;
-  animation-name: loader;
+          animation-name: loader;
   -webkit-animation-duration: 4s;
-  animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-delay: 4s;
-  animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .container-loader > span {
@@ -735,13 +736,13 @@ header > a {
 .container-loader > .letter1 {
   color: #ff79da;
   -webkit-animation: spinloadtop 1500ms 3 alternate ease-out;
-  animation: spinloadtop 1500ms 3 alternate ease-out;
+          animation: spinloadtop 1500ms 3 alternate ease-out;
 }
 
 .container-loader > .letter2 {
   color: #ff79da;
   -webkit-animation: spinloadbottom 1500ms 3 alternate ease-out;
-  animation: spinloadbottom 1500ms 3 alternate ease-out;
+          animation: spinloadbottom 1500ms 3 alternate ease-out;
 }
 
 @-webkit-keyframes spinloadtop {
@@ -924,6 +925,7 @@ ul a {
     margin: auto;
   }
   .global-menu {
+    padding: Opx;
     width: 90%;
     margin: auto;
     padding: 20px 50px 10px 50px;
@@ -955,4 +957,4 @@ ul a {
     width: 40% !important;
     padding: 0px 0px;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

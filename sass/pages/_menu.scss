@@ -34,7 +34,7 @@ header > a {
     bottom: 10px;
     font-size: 24px;
     &.fa-solid {
-      background: linear-gradient($pink, $purple);
+      background: linear-gradient($color-secondary, $color-primary);
       background-clip: text;
       color: transparent;
       cursor: pointer;
@@ -64,6 +64,7 @@ header > a {
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 15px;
+  cursor: pointer;
   animation: slidein 2s both ease-in-out;
   &__subtitle {
     display: flex;
@@ -108,7 +109,7 @@ header > a {
   top: 0px;
   width: 0;
   height: 100%;
-  background: $bluegreen;
+  background: $color-tertiary;
   color: white;
   border-radius: 0px 15px 15px 0px;
   overflow: hidden;
@@ -148,7 +149,7 @@ header > a {
     font-size: 16px;
   }
   &__barre {
-    border: 2px solid $bluegreen;
+    border: 2px solid $color-tertiary;
     width: 10%;
     margin: 5px 0px 15px 0px;
   }

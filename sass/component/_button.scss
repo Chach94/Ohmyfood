@@ -1,5 +1,5 @@
 .btn {
-  background: linear-gradient($pink, $purple);
+  background: linear-gradient($color-secondary, $color-primary);
   border: none;
   color: white;
   font-weight: 400;
@@ -9,7 +9,10 @@
   @include card-shadow;
   cursor: pointer;
   &:active {
-    background: linear-gradient(lighten($pink, 5), lighten($purple, 5));
+    background: linear-gradient(
+      lighten($color-secondary, 5),
+      lighten($color-primary, 5)
+    );
     box-shadow: 3px 5px 5px 5px lighten(black, 50);
   }
   &__index {

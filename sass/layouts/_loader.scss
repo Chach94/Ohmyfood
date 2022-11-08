@@ -19,12 +19,12 @@
 }
 
 .container-loader > .letter1 {
-  color: $pink;
+  color: $color-secondary;
   animation: spinloadtop 1500ms 3 alternate ease-out;
 }
 
 .container-loader > .letter2 {
-  color: $pink;
+  color: $color-secondary;
   animation: spinloadbottom 1500ms 3 alternate ease-out;
 }
 
@@ -33,16 +33,16 @@
     transform: translateY(-300px) scale(0);
   }
   20% {
-    color: $purple;
+    color: $color-primary;
   }
   40% {
-    color: $bluegreen;
+    color: $color-tertiary;
   }
   60% {
-    color: $pink;
+    color: $color-secondary;
   }
   80% {
-    color: $purple;
+    color: $color-primary;
   }
   100% {
     transform: translateY(0px) scale(1);
@@ -53,16 +53,16 @@
     transform: translateY(300px) scale(0);
   }
   20% {
-    color: $purple;
+    color: $color-primary;
   }
   40% {
-    color: $bluegreen;
+    color: $color-tertiary;
   }
   60% {
-    color: $pink;
+    color: $color-secondary;
   }
   80% {
-    color: $purple;
+    color: $color-primary;
   }
   100% {
     transform: translateY(0px) scale(1);
